@@ -84,7 +84,7 @@ class IndexPage extends React.Component {
                 przepływ. Obliczenie prędkości w kanale prostokątnym.
               </p>
             </Card>
-            <Card tittle="Wodkan" imgPath={water} to="/WodociagKanalizacja">
+            <Card tittle="Instalacja wodna" imgPath={water} to="/Wodociag">
               <p>
                 Automatyczny dobór średnic rur wodnych w oparciu o sumę wypływów
                 normatywnych i przepływ obliczeniowy. Automatyczne obliczenie przepływu.

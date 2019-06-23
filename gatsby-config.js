@@ -4,6 +4,7 @@ module.exports = {
     description: `Calculate pressure and diameter`,
     author: `KBM Projekt`,
   },
+  pathPrefix: "/kalkulatorpro",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
