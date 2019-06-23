@@ -16,6 +16,7 @@ const InputStyled = styled.input`
     border-color: black;
   }
 `;
+
 const InputLabel = styled.label`
   color: white;
   display: block;

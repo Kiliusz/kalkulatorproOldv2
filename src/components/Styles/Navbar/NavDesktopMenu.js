@@ -40,27 +40,27 @@ const NavDesktopMenu = () => (
   <StyledWrapper>
     <ul>
       <li>
-        <Link to="/Ogrzewanie" activeStyle={activeStyle}>
+        <Link to="/Heating" activeStyle={activeStyle}>
           Ogrzewanie
         </Link>
       </li>
       <li>
-        <Link to="/Wentylacja" activeStyle={activeStyle}>
+        <Link to="/Vent" activeStyle={activeStyle}>
           Wentylacja
         </Link>
       </li>
       <li>
-        <Link to="/Gaz" activeStyle={activeStyle}>
+        <Link to="/Gas" activeStyle={activeStyle}>
           Gaz
         </Link>
       </li>
       <li>
-        <Link to="/Wodociag" activeStyle={activeStyle}>
+        <Link to="/Water" activeStyle={activeStyle}>
           Wodkan
         </Link>
       </li>
       <li>
-        <Link to="/Kontakt" activeStyle={activeStyle}>
+        <Link to="/Contact" activeStyle={activeStyle}>
           Kontakt
         </Link>
       </li>

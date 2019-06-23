@@ -38,19 +38,19 @@ const NavMobileMenu = ({ isOpen }) => (
   <StyledWrapper isOpen={isOpen}>
     <ul>
       <li>
-        <Link to="/Ogrzewanie">Ogrzewanie</Link>
+        <Link to="/Heating">Ogrzewanie</Link>
       </li>
       <li>
-        <Link to="/Wentylacja">Wentylacja</Link>
+        <Link to="/Vent">Wentylacja</Link>
       </li>
       <li>
-        <Link to="/Gaz">Gaz</Link>
+        <Link to="/Gas">Gaz</Link>
       </li>
       <li>
-        <Link to="/Wodociag">Wodkan</Link>
+        <Link to="/Water">Wodkan</Link>
       </li>
       <li>
-        <Link to="/Kontakt">Kontakt</Link>
+        <Link to="/Contact">Kontakt</Link>
       </li>
     </ul>
   </StyledWrapper>

@@ -6,7 +6,6 @@ const StyledP = styled.p`
   font-size: 1.6rem;
   line-height: 2.5rem;
   color: ${({ theme }) => theme.grayextralight};
-  /* font-weight: 100; */
 
   span {
     margin: 0 1rem 0 1rem;

@@ -45,7 +45,7 @@ export const getFluidDensity = (specificHeat, temp) => {
     fluidDensity = 1036;
   } else if (specificHeat == 1.005) {
     fluidDensity = 1.2;
-  }
+  } else fluidDensity = 1000;
   return fluidDensity;
 };
 
@@ -143,13 +143,13 @@ export const calcLambda = (pipeRoughness, reynolds, diameter) => {
         pipeRoughness / 1000 / (3.71 * (diameter / 1000)) +
           2.51 / (reynolds * Math.sqrt(lambd)),
       );
-    lambd = lambd + 0.00001;
-    if (counter == 55555555) {
+    lambd = lambd + 0.00002;
+    if (counter == 555555) {
       break;
     }
     counter++;
   } while (Math.abs(lambdaL - lambdaR) > 0.005);
-
+  console.log(counter);
   return lambd;
 };
 

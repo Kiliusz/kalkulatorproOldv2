@@ -59,16 +59,16 @@ class HeatingCalc extends React.Component {
   };
 
   handleMediumTypeChange = (e) => {
-    let id = e.target.id;
-    let value = e.target.value;
-    let { lastHandler, deltaTemp, power, mediumTemp, flowCMPH } = this.state;
+    const id = e.target.id;
+    const value = e.target.value;
+    const { lastHandler, deltaTemp, power, mediumTemp, flowCMPH } = this.state;
     if (lastHandler === "power" || lastHandler === "deltaTemp") {
       if (this.validateDeltaTempPower(deltaTemp, power)) {
-        let flowCMPH = Calc.roundToDigits(
+        const flowCMPH = Calc.roundToDigits(
           Calc.flowBasedOnPower(deltaTemp, power, value, mediumTemp),
           3,
         );
-        let flowLPS = (flowCMPH / 3600) * 1000;
+        const flowLPS = (flowCMPH / 3600) * 1000;
         this.setState({ flowCMPH, flowLPS });
         this.calculateResults(id, value);
       } else {
@@ -84,17 +84,17 @@ class HeatingCalc extends React.Component {
   };
 
   handleMediumTempChange = (e) => {
-    let id = e.target.id;
+    const id = e.target.id;
     let value = e.target.value;
     value = Calc.validateTemp(value, 150, 0);
-    let { lastHandler, deltaTemp, power, flowCMPH, mediumType } = this.state;
+    const { lastHandler, deltaTemp, power, flowCMPH, mediumType } = this.state;
     if (lastHandler === "power" || lastHandler === "deltaTemp") {
       if (this.validateDeltaTempPower(deltaTemp, power)) {
-        let flowCMPH = Calc.roundToDigits(
+        const flowCMPH = Calc.roundToDigits(
           Calc.flowBasedOnPower(deltaTemp, power, mediumType, value),
           3,
         );
-        let flowLPS = (flowCMPH / 3600) * 1000;
+        const flowLPS = (flowCMPH / 3600) * 1000;
         this.setState({ flowCMPH, flowLPS });
         this.calculateResults(id, value);
       } else {
@@ -110,9 +110,9 @@ class HeatingCalc extends React.Component {
   };
 
   handlePipeTypeChange = (e) => {
-    let id = e.target.id;
-    let value = e.target.value;
-    let { lastHandler, deltaTemp, power, flowCMPH } = this.state;
+    const id = e.target.id;
+    const value = e.target.value;
+    const { lastHandler, deltaTemp, power, flowCMPH } = this.state;
     if (lastHandler === "power" || lastHandler === "deltaTemp") {
       if (this.validateDeltaTempPower(deltaTemp, power)) {
         this.calculateResults(id, value);
@@ -129,15 +129,15 @@ class HeatingCalc extends React.Component {
   };
 
   handlePowerChange = (e) => {
-    let id = e.target.id;
-    let value = e.target.value;
-    let { deltaTemp, mediumType, mediumTemp } = this.state;
+    const id = e.target.id;
+    const value = e.target.value;
+    const { deltaTemp, mediumType, mediumTemp } = this.state;
     if (this.validateDeltaTempPower(deltaTemp, value)) {
-      let flowCMPH = Calc.roundToDigits(
+      const flowCMPH = Calc.roundToDigits(
         Calc.flowBasedOnPower(deltaTemp, value, mediumType, mediumTemp),
         3,
       );
-      let flowLPS = Calc.roundToDigits((flowCMPH / 3600) * 1000, 3);
+      const flowLPS = Calc.roundToDigits((flowCMPH / 3600) * 1000, 3);
       this.setState({ flowCMPH, flowLPS, lastHandler: id });
       this.calculateResults(id, value);
     } else {
@@ -146,16 +146,16 @@ class HeatingCalc extends React.Component {
   };
 
   handleDeltaTempChange = (e) => {
-    let id = e.target.id;
-    let value = e.target.value;
+    const id = e.target.id;
+    const value = e.target.value;
 
-    let { power, mediumType, mediumTemp } = this.state;
+    const { power, mediumType, mediumTemp } = this.state;
     if (this.validateDeltaTempPower(value, power)) {
-      let flowCMPH = Calc.roundToDigits(
+      const flowCMPH = Calc.roundToDigits(
         Calc.flowBasedOnPower(value, power, mediumType, mediumTemp),
         3,
       );
-      let flowLPS = Calc.roundToDigits((flowCMPH / 3600) * 1000, 3);
+      const flowLPS = Calc.roundToDigits((flowCMPH / 3600) * 1000, 3);
       this.setState({ flowCMPH, flowLPS, lastHandler: id });
       this.calculateResults(id, value);
     } else {
@@ -164,9 +164,9 @@ class HeatingCalc extends React.Component {
   };
 
   handleFlowCMPHChange = (e) => {
-    let id = e.target.id;
-    let value = e.target.value;
-    let flowLPS = Calc.roundToDigits((value / 3600) * 1000, 3);
+    const id = e.target.id;
+    const value = e.target.value;
+    const flowLPS = Calc.roundToDigits((value / 3600) * 1000, 3);
     this.setState({ power: "", flowCMPH: value, flowLPS, lastHandler: id });
     if (this.validateFlow(value)) {
       this.calculateResults(id, value);
@@ -174,9 +174,9 @@ class HeatingCalc extends React.Component {
   };
 
   handleFlowLPSChange = (e) => {
-    let id = e.target.id;
-    let value = e.target.value;
-    let flowCMPH = Calc.roundToDigits(value * 3.6, 3);
+    const id = e.target.id;
+    const value = e.target.value;
+    const flowCMPH = Calc.roundToDigits(value * 3.6, 3);
     this.setState({ power: "", flowCMPH, flowLPS: value, lastHandler: id });
     if (this.validateFlow(value)) {
       this.calculateResults(id, value);
@@ -184,16 +184,16 @@ class HeatingCalc extends React.Component {
   };
 
   calculateResults = (id, value) => {
-    this.setState({ [id]: value }, () => {
-      let { pipeType, flowCMPH, mediumTemp, mediumType } = this.state;
-      let result = Calc.calcArrayOfPressDrop(
+    this.setState((state) => {
+      const { pipeType, flowCMPH, mediumTemp, mediumType } = { ...state, [id]: value };
+      const result = Calc.calcArrayOfPressDrop(
         160,
         pipeType,
         flowCMPH,
         mediumTemp,
         mediumType,
       );
-      this.setState({ result, validationMsg: "", hasResult: true });
+      return { [id]: value, result, validationMsg: "", hasResult: true };
     });
   };
 
@@ -221,7 +221,7 @@ class HeatingCalc extends React.Component {
   };
 
   render() {
-    let {
+    const {
       mediumType,
       mediumTemp,
       flowCMPH,
