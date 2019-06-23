@@ -1,0 +1,7 @@
+{
+  "extends": ["react-app", "airbnb"],
+  "globals": {
+    "window": true,
+    "document": true
+  }
+}
