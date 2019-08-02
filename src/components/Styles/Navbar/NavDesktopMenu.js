@@ -33,7 +33,7 @@ const StyledWrapper = styled.div`
 `;
 
 const activeStyle = {
-  color: "#707daf",
+  color: "#707daf"
 };
 
 const NavDesktopMenu = () => (

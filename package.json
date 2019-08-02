@@ -38,7 +38,10 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+<<<<<<< HEAD
     "dev": "gatsby develop -H 0.0.0.0",
+=======
+>>>>>>> cb4392033da33e9cfe2e53260dd554cc2c8b6963
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",

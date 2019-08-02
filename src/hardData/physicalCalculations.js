@@ -24,6 +24,7 @@ export const cmphToLps = (flow) => roundToDigits(flow / 3.6, 2);
 export const calcWaterDensity = (temp) =>
   (999.83952 +
     16.945176 * temp -
+<<<<<<< HEAD
     7.9870401e-3 * temp ** 2 -
     46.170461e-6 * temp ** 3 +
     105.56302e-9 * temp ** 4 -
@@ -75,6 +76,30 @@ export const getFluidDensity = (specificHeat, temp) => {
       fluidDensity = 1000;
       break;
   }
+=======
+    7.9870401e-3 * temp * temp -
+    46.170461e-6 * temp * temp * temp +
+    105.56302e-9 * temp * temp * temp * temp -
+    280.54253e-12 * temp * temp * temp * temp * temp) /
+  (1 + 16.89785e-3 * temp);
+
+//get Fluid density in kg/m3 depends on specificHeat and temp
+export const getFluidDensity = (specificHeat, temp) => {
+  let fluidDensity;
+  if (specificHeat == 4.2) {
+    fluidDensity = calcWaterDensity(temp);
+  } else if (specificHeat == 3.63) {
+    fluidDensity = 1052;
+  } else if (specificHeat == 3.54) {
+    fluidDensity = 1059;
+  } else if (specificHeat == 3.77) {
+    fluidDensity = 1034;
+  } else if (specificHeat == 3.7) {
+    fluidDensity = 1036;
+  } else if (specificHeat == 1.005) {
+    fluidDensity = 1.2;
+  } else fluidDensity = 1000;
+>>>>>>> cb4392033da33e9cfe2e53260dd554cc2c8b6963
   return fluidDensity;
 };
 
@@ -178,6 +203,10 @@ export const calcLambda = (pipeRoughness, reynolds, diameter) => {
     }
     counter++;
   } while (Math.abs(lambdaL - lambdaR) > 0.005);
+<<<<<<< HEAD
+=======
+  console.log(counter);
+>>>>>>> cb4392033da33e9cfe2e53260dd554cc2c8b6963
   return lambd;
 };
 
@@ -399,7 +428,11 @@ export const sumOfQn = (basin, sink, rinser, tub, shower, wash, dish, urinal) =>
   );
 };
 
+<<<<<<< HEAD
 export const calcQbasedOnQn = (sumQn, typeOfBuilding) => {
+=======
+export const calcQbasenOnQn = (sumQn, typeOfBuilding) => {
+>>>>>>> cb4392033da33e9cfe2e53260dd554cc2c8b6963
   let calculatedQ;
   switch (typeOfBuilding) {
     case "1":

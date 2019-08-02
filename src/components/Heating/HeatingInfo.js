@@ -4,8 +4,11 @@ import InfoText from "../Basics/InfoText";
 import helpIcon from "../../assets/HelpIcons/help.svg";
 import folder from "../../assets/HelpIcons/folder.svg";
 import knowledge from "../../assets/HelpIcons/knowledge.svg";
+<<<<<<< HEAD
 import PipesList from "../Basics/PipesList";
 import * as pipes from "../../hardData/pipes";
+=======
+>>>>>>> cb4392033da33e9cfe2e53260dd554cc2c8b6963
 
 class HeatingInfo extends Component {
   state = {
@@ -73,6 +76,7 @@ class HeatingInfo extends Component {
           isOpen={this.state.isPipesDimsOpen}
           imgPath={folder}
         >
+<<<<<<< HEAD
           <h3>Rury stalowe</h3>
           <PipesList pipes={pipes.steelPipesDiameters} />
           <h3>Rury PP PN20</h3>
@@ -81,12 +85,27 @@ class HeatingInfo extends Component {
           <PipesList pipes={pipes.ppPipesDiametersPN16} />
           <h3>Rury PEX</h3>
           <PipesList pipes={pipes.pexPipesDiameters} />
+=======
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dicta optio est
+            recusandae harum voluptates accusamus quam voluptate delectus!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
+            quos debitis est totam obcaecati?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
+            quos debitis est totam obcaecati?
+          </p>
+>>>>>>> cb4392033da33e9cfe2e53260dd554cc2c8b6963
         </InfoText>
         <InfoText
           onClick={this.handleCloseClick}
           isOpen={this.state.isKnowledgeOpen}
           imgPath={knowledge}
         >
+<<<<<<< HEAD
           <p>Domyślne kryterium jednostkowego spadku ciśnienia wynosi dP = 160 Pa/m</p>
           <p>
             Roztwory glikolu mają większą lepkość niż czysta woda, co wpływa na
@@ -115,11 +134,25 @@ class HeatingInfo extends Component {
             prowadzić do utraty przytomności, natomiast w małych stężeniach powoduje
             podrażnienie nosa i gardła oraz bóle głowy. Warto zatem przy pracy z glikolem
             zachować szczególną ostrożność.
+=======
+          <p>
+            Lorem ipsum dolor si amet, consectetur adipisicing elit. At mollitia molestiae
+            reiciendis explicabo doloribus unde magni. Quidem aliquid nihil in quisquam
+            similique qui numquam, inventore eos laudantium ea dolorem nostrum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At mollitia
+            molestiae reiciendis explicabo doloribus unde magni. Quidem aliquid nihil in
+            quisquam similique qui numquam, inventore eos laudantium ea dolorem nostrum.
+>>>>>>> cb4392033da33e9cfe2e53260dd554cc2c8b6963
           </p>
         </InfoText>
       </div>
     );
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> cb4392033da33e9cfe2e53260dd554cc2c8b6963
 export default HeatingInfo;

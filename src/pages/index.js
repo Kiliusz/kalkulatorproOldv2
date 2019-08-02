@@ -29,7 +29,10 @@ const Hero = styled.div`
   background-size: cover;
   background-position: 50% 70%;
   height: 300px;
+<<<<<<< HEAD
   width: 100%;
+=======
+>>>>>>> cb4392033da33e9cfe2e53260dd554cc2c8b6963
   ${({ theme }) => theme.mediaQ.tablet} {
     height: 380px;
     padding: 6rem 0;

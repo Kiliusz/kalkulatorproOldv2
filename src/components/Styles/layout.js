@@ -59,8 +59,11 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
+<<<<<<< HEAD
   display: flex;
   flex-wrap: wrap;
+=======
+>>>>>>> cb4392033da33e9cfe2e53260dd554cc2c8b6963
   flex: 1;
 `;
 

@@ -11,15 +11,15 @@ class WaterInfo extends Component {
   state = {
     isInfoOpen: false,
     isPipesDimsOpen: false,
-    isTipsOpen: false,
+    isTipsOpen: false
   };
 
-  handleClick = (e) => {
+  handleClick = e => {
     let toggledFlag = !this.state[e.target.id];
     let newState = {
       isInfoOpen: false,
       isPipesDimsOpen: false,
-      isKnowledgeOpen: false,
+      isKnowledgeOpen: false
     };
     newState[e.target.id] = toggledFlag;
     this.setState(newState);
@@ -29,7 +29,7 @@ class WaterInfo extends Component {
     let newState = {
       isInfoOpen: false,
       isPipesDimsOpen: false,
-      isKnowledgeOpen: false,
+      isKnowledgeOpen: false
     };
     this.setState(newState);
   };
@@ -38,7 +38,11 @@ class WaterInfo extends Component {
     return (
       <div>
         <Button id="isInfoOpen" onClick={this.handleClick} text="Instrukcja" />
-        <Button id="isPipesDimsOpen" onClick={this.handleClick} text="Typoszereg" />
+        <Button
+          id="isPipesDimsOpen"
+          onClick={this.handleClick}
+          text="Typoszereg"
+        />
         <Button id="isKnowledgeOpen" onClick={this.handleClick} text="Wiedza" />
         <InfoText
           onClick={this.handleCloseClick}
@@ -46,18 +50,18 @@ class WaterInfo extends Component {
           imgPath={helpIcon}
         >
           <p>
-            Wprowadź ilość przyborów sanitarnych, ewentualnie zmień rodzaj budynku, rodzaj
-            rur lub zmień kryterium prędkości - program sam obliczy przepływy i dobierze
-            średnicę rury
+            Wprowadź ilość przyborów sanitarnych, ewentualnie zmień rodzaj
+            budynku, rodzaj rur lub zmień kryterium prędkości - program sam
+            obliczy przepływy i dobierze średnicę rury
           </p>
           <p>Dobór średnic obliczany jest na podstawie kryterium prędkości</p>
           <p>
-            Dla zaworu czerpalnego należy skorzystać z pola pisuar (te same wypływy
-            normatywne)
+            Dla zaworu czerpalnego należy skorzystać z pola pisuar (te same
+            wypływy normatywne)
           </p>
           <p>
-            Dobór średnic na podstawie własnego przepływu można wykonać w zakładce
-            ogrzewanie
+            Dobór średnic na podstawie własnego przepływu można wykonać w
+            zakładce ogrzewanie
           </p>
         </InfoText>
         <InfoText
