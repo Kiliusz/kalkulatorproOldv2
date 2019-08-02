@@ -56,7 +56,7 @@ const NavDesktopMenu = () => (
       </li>
       <li>
         <Link to="/Water" activeStyle={activeStyle}>
-          Wodkan
+          Woda
         </Link>
       </li>
       <li>

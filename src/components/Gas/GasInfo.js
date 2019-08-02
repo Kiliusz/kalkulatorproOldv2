@@ -4,6 +4,8 @@ import InfoText from "../Basics/InfoText";
 import helpIcon from "../../assets/HelpIcons/help.svg";
 import folder from "../../assets/HelpIcons/folder.svg";
 import knowledge from "../../assets/HelpIcons/knowledge.svg";
+import PipesList from "../Basics/PipesList";
+import * as pipes from "../../hardData/pipes";
 
 class GasInfo extends Component {
   state = {
@@ -44,16 +46,20 @@ class GasInfo extends Component {
           imgPath={helpIcon}
         >
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
+            Wprowadź przepływ w m3/h lub moc w kW aby program automatycznie dobrał
+            średnicę rur i policzył spadek jednostkowy.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
+            W przypadku urządzeń o bardzo niskiej sprawności należy posługiwać się
+            przepływem.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
+            Przeliczenie z mocy na przepływ odbywa się z uwzględnieniem sprawności
+            typowych kotłów gazowych.
+          </p>
+          <p>
+            Pole przepływ w m3/h lub mocy w kW można wypełniać wedle uznania. Po wpisaniu
+            jednej wartości, druga wartość zostanie automatycznie przeliczona.
           </p>
         </InfoText>
         <InfoText
@@ -61,18 +67,8 @@ class GasInfo extends Component {
           isOpen={this.state.isPipesDimsOpen}
           imgPath={folder}
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dicta optio est
-            recusandae harum voluptates accusamus quam voluptate delectus!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
+          <h3>Rury stalowe</h3>
+          <PipesList pipes={pipes.steelPipesDiameters} />
         </InfoText>
         <InfoText
           onClick={this.handleCloseClick}
@@ -80,16 +76,25 @@ class GasInfo extends Component {
           imgPath={knowledge}
         >
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dicta optio est
-            recusandae harum voluptates accusamus quam voluptate delectus!
+            Wzrost ciśnienia gazu ziemnego w odcinku pionowym przy wznoszeniu o 1,0 m
+            wynosi 5,4Pa
+          </p>
+          <p>Dobór rur na podstawie kryterium prędkości 6 m/s.</p>
+          <p>
+            Zgodnie z rozp. "sprawie warunków technicznych, jakim powinny odpowiadać sieci
+            gazowe i ich usytuowanie" sieci gazowe dzielą się na:
+            <ul>
+              <li>niskie ciśn. - do 10 kPa (0,1 bar) włącznie</li>
+              <li>średnie ciśn. - pow. 10 kPa (0,1 bar) do 500 kPa (5 bar) włącznie</li>
+              <li>
+                podw. średnie ciśn. - pow. 500 kPa (5 bar) do 1,6 MPa (16 bar) włącznie
+              </li>
+              <li>wyoskie ciśn. - powyżej 1,6 MPa (16 bar)</li>
+            </ul>
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
+            Wymagane ciśnienie gazu dla typowych urządzeń gazowych wynosi 1,6 - 2,5 kPa
+            (16 mbar - 25 mbar)
           </p>
         </InfoText>
       </div>

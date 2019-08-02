@@ -4,6 +4,8 @@ import InfoText from "../Basics/InfoText";
 import helpIcon from "../../assets/HelpIcons/help.svg";
 import folder from "../../assets/HelpIcons/folder.svg";
 import knowledge from "../../assets/HelpIcons/knowledge.svg";
+import PipesList from "../Basics/PipesList";
+import * as pipes from "../../hardData/pipes";
 
 class VentInfo extends Component {
   state = {
@@ -43,17 +45,10 @@ class VentInfo extends Component {
           isOpen={this.state.isInfoOpen}
           imgPath={helpIcon}
         >
+          <p>Kanały wentylacyjne dobierane są w oparciu o kryterium prędkości.</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
+            Opór jednostkowy w Pa/m obliczany jest na podstawie wzoru Darcy-Weisbecha.
+            Przyjęto chropowatość bezwględną dla stali ocynkowanej.
           </p>
         </InfoText>
         <InfoText
@@ -61,36 +56,22 @@ class VentInfo extends Component {
           isOpen={this.state.isPipesDimsOpen}
           imgPath={folder}
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dicta optio est
-            recusandae harum voluptates accusamus quam voluptate delectus!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
+          <h3>Rury SPIRO</h3>
+          <PipesList pipes={pipes.spiroPipes} />
         </InfoText>
         <InfoText
           onClick={this.handleCloseClick}
           isOpen={this.state.isKnowledgeOpen}
           imgPath={knowledge}
         >
+          <p>Kryterium prędkość dla doboru kanałów wynosi 5,5 m/s</p>
+          <p>Zalecana prędkość powietrza przy czerpni nie więcej niż 2,5 m/s</p>
+          <p>Zalecana prędkość powietrza przy wyrzutni nie więcej niż 4,0 m/s</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dicta optio est
-            recusandae harum voluptates accusamus quam voluptate delectus!
+            W przypadku kanałów w obiektach przemysłowych prędkości powietrza w kanałach
+            mogą być większe, rzędu 6-10 m/s
           </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
+          <p>Dla kanałów przy nawiewnikach zaleca się prędkości mniejsze 3-4 m/s</p>
         </InfoText>
       </div>
     );

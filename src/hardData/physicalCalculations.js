@@ -24,28 +24,57 @@ export const cmphToLps = (flow) => roundToDigits(flow / 3.6, 2);
 export const calcWaterDensity = (temp) =>
   (999.83952 +
     16.945176 * temp -
-    7.9870401e-3 * temp * temp -
-    46.170461e-6 * temp * temp * temp +
-    105.56302e-9 * temp * temp * temp * temp -
-    280.54253e-12 * temp * temp * temp * temp * temp) /
+    7.9870401e-3 * temp ** 2 -
+    46.170461e-6 * temp ** 3 +
+    105.56302e-9 * temp ** 4 -
+    280.54253e-12 * temp ** 5) /
   (1 + 16.89785e-3 * temp);
 
-//get Fluid density in kg/m3 depends on specificHeat and temp
+// get Fluid density in kg/m3 depends on specificHeat and temp
+// export const getFluidDensity = (specificHeat, temp) => {
+//   let fluidDensity;
+//   specificHeat *= 1;
+//   if (specificHeat == 4.2) {
+//     fluidDensity = calcWaterDensity(temp);
+//   } else if (specificHeat == 3.63) {
+//     fluidDensity = 1052;
+//   } else if (specificHeat == 3.54) {
+//     fluidDensity = 1059;
+//   } else if (specificHeat == 3.77) {
+//     fluidDensity = 1034;
+//   } else if (specificHeat == 3.7) {
+//     fluidDensity = 1036;
+//   } else if (specificHeat == 1.005) {
+//     fluidDensity = 1.2;
+//   } else fluidDensity = 1000;
+//   return fluidDensity;
+// };
+
 export const getFluidDensity = (specificHeat, temp) => {
   let fluidDensity;
-  if (specificHeat == 4.2) {
-    fluidDensity = calcWaterDensity(temp);
-  } else if (specificHeat == 3.63) {
-    fluidDensity = 1052;
-  } else if (specificHeat == 3.54) {
-    fluidDensity = 1059;
-  } else if (specificHeat == 3.77) {
-    fluidDensity = 1034;
-  } else if (specificHeat == 3.7) {
-    fluidDensity = 1036;
-  } else if (specificHeat == 1.005) {
-    fluidDensity = 1.2;
-  } else fluidDensity = 1000;
+  switch (specificHeat) {
+    case 4.2:
+      fluidDensity = calcWaterDensity(temp);
+      break;
+    case 3.63:
+      fluidDensity = 1052;
+      break;
+    case 3.54:
+      fluidDensity = 1059;
+      break;
+    case 3.77:
+      fluidDensity = 1034;
+      break;
+    case 3.7:
+      fluidDensity = 1036;
+      break;
+    case 1.005:
+      fluidDensity = 1.2;
+      break;
+    default:
+      fluidDensity = 1000;
+      break;
+  }
   return fluidDensity;
 };
 
@@ -149,7 +178,6 @@ export const calcLambda = (pipeRoughness, reynolds, diameter) => {
     }
     counter++;
   } while (Math.abs(lambdaL - lambdaR) > 0.005);
-  console.log(counter);
   return lambd;
 };
 
@@ -371,7 +399,7 @@ export const sumOfQn = (basin, sink, rinser, tub, shower, wash, dish, urinal) =>
   );
 };
 
-export const calcQbasenOnQn = (sumQn, typeOfBuilding) => {
+export const calcQbasedOnQn = (sumQn, typeOfBuilding) => {
   let calculatedQ;
   switch (typeOfBuilding) {
     case "1":

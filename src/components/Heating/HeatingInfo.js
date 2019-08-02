@@ -4,6 +4,8 @@ import InfoText from "../Basics/InfoText";
 import helpIcon from "../../assets/HelpIcons/help.svg";
 import folder from "../../assets/HelpIcons/folder.svg";
 import knowledge from "../../assets/HelpIcons/knowledge.svg";
+import PipesList from "../Basics/PipesList";
+import * as pipes from "../../hardData/pipes";
 
 class HeatingInfo extends Component {
   state = {
@@ -71,37 +73,53 @@ class HeatingInfo extends Component {
           isOpen={this.state.isPipesDimsOpen}
           imgPath={folder}
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dicta optio est
-            recusandae harum voluptates accusamus quam voluptate delectus!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
+          <h3>Rury stalowe</h3>
+          <PipesList pipes={pipes.steelPipesDiameters} />
+          <h3>Rury PP PN20</h3>
+          <PipesList pipes={pipes.ppPipesDiametersPN20} />
+          <h3>Rury PP PN16</h3>
+          <PipesList pipes={pipes.ppPipesDiametersPN16} />
+          <h3>Rury PEX</h3>
+          <PipesList pipes={pipes.pexPipesDiameters} />
         </InfoText>
         <InfoText
           onClick={this.handleCloseClick}
           isOpen={this.state.isKnowledgeOpen}
           imgPath={knowledge}
         >
+          <p>Domyślne kryterium jednostkowego spadku ciśnienia wynosi dP = 160 Pa/m</p>
           <p>
-            Lorem ipsum dolor si amet, consectetur adipisicing elit. At mollitia molestiae
-            reiciendis explicabo doloribus unde magni. Quidem aliquid nihil in quisquam
-            similique qui numquam, inventore eos laudantium ea dolorem nostrum.
+            Roztwory glikolu mają większą lepkość niż czysta woda, co wpływa na
+            wspólczynnik tarcia (mniejsze straty ciśnienia).
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At mollitia
-            molestiae reiciendis explicabo doloribus unde magni. Quidem aliquid nihil in
-            quisquam similique qui numquam, inventore eos laudantium ea dolorem nostrum.
+            Im większa temperatura wody czy glikolu, tym mniejsza lepkość i tym samym
+            mniejszy współczynnik tarcia (mniejsze straty ciśnienia).
+          </p>
+          <p>
+            <b>Glikol propylenowy</b> uznawany jest za związek nieszkodliwy dla zdrowia,
+            lub o bardzo niskiej szkodliwości. Nie stwierdzono by powodował uczulenia, nie
+            wykazuje rakotwórczości i nie jest mutagenny. Kontakt z nierozcieńczonym
+            glikolem propylenowym może wywołać podrażnienia oczu i skóry, jednak niegroźne
+            i łatwo ustępujące, zwykle wraz z ustaniem kontaktu. W ciele jest szybko
+            przekształcany w kwas mlekowy (w sposób podobny do przekształcania w mięśniach
+            cukru w energię). W środowisku łatwo ulega biodegradacji
+          </p>
+          <p>
+            <b>Glikol etylenowy</b> jest substancją szkodliwą, depresyjnie działającą na
+            ośrodkowy układ nerwowy. Działa drażniąco na błony śluzowe nosa i spojówki.
+            Organizm wchłania go poprzez drogi oddechowe, skórę oraz z przewodu
+            pokarmowego. Drogą pokarmową glikol początkowo powoduje objawy podobne do
+            upojenia alkoholem, po czym (po kilku bądź kilkunastu godzinach) doprowadza do
+            kwasicy metabolicznej. W przypadku podgrzewania glikolu powstająca para może
+            prowadzić do utraty przytomności, natomiast w małych stężeniach powoduje
+            podrażnienie nosa i gardła oraz bóle głowy. Warto zatem przy pracy z glikolem
+            zachować szczególną ostrożność.
           </p>
         </InfoText>
       </div>
     );
   }
 }
+
 export default HeatingInfo;

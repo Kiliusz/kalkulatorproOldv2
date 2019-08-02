@@ -59,6 +59,8 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   flex: 1;
 `;
 

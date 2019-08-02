@@ -4,6 +4,8 @@ import InfoText from "../Basics/InfoText";
 import helpIcon from "../../assets/HelpIcons/help.svg";
 import folder from "../../assets/HelpIcons/folder.svg";
 import knowledge from "../../assets/HelpIcons/knowledge.svg";
+import PipesList from "../Basics/PipesList";
+import * as pipes from "../../hardData/pipes";
 
 class WaterInfo extends Component {
   state = {
@@ -44,16 +46,18 @@ class WaterInfo extends Component {
           imgPath={helpIcon}
         >
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
+            Wprowadź ilość przyborów sanitarnych, ewentualnie zmień rodzaj budynku, rodzaj
+            rur lub zmień kryterium prędkości - program sam obliczy przepływy i dobierze
+            średnicę rury
+          </p>
+          <p>Dobór średnic obliczany jest na podstawie kryterium prędkości</p>
+          <p>
+            Dla zaworu czerpalnego należy skorzystać z pola pisuar (te same wypływy
+            normatywne)
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
+            Dobór średnic na podstawie własnego przepływu można wykonać w zakładce
+            ogrzewanie
           </p>
         </InfoText>
         <InfoText
@@ -61,18 +65,14 @@ class WaterInfo extends Component {
           isOpen={this.state.isPipesDimsOpen}
           imgPath={folder}
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dicta optio est
-            recusandae harum voluptates accusamus quam voluptate delectus!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
+          <h3>Rury stalowe</h3>
+          <PipesList pipes={pipes.steelPipesDiameters} />
+          <h3>Rury PP PN20</h3>
+          <PipesList pipes={pipes.ppPipesDiametersPN20} />
+          <h3>Rury PP PN16</h3>
+          <PipesList pipes={pipes.ppPipesDiametersPN16} />
+          <h3>Rury PEX</h3>
+          <PipesList pipes={pipes.pexPipesDiameters} />
         </InfoText>
         <InfoText
           onClick={this.handleCloseClick}
@@ -80,16 +80,17 @@ class WaterInfo extends Component {
           imgPath={knowledge}
         >
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dicta optio est
-            recusandae harum voluptates accusamus quam voluptate delectus!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, suscipit
-            quos debitis est totam obcaecati?
+            Wypływy normatywne
+            <ul>
+              <li>Umywalka - 0,07 dm3/s</li>
+              <li>Zlewozmywak - 0,07 dm3/s</li>
+              <li>Płuczka zbiornikowa - 0,13 dm3/s</li>
+              <li>Wanna - 0,15 dm3/s</li>
+              <li>Natrysk - 0,15 dm3/s</li>
+              <li>Pralka - 0,25 dm3/s</li>
+              <li>Zmywarka - 0,15 dm3/s</li>
+              <li>Pisuar / Zawór czerpalny - 0,3 dm3/s</li>
+            </ul>
           </p>
         </InfoText>
       </div>

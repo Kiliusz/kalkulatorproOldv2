@@ -4,11 +4,12 @@ import close from "../../assets/HelpIcons/close.svg";
 
 const StyledWrapper = styled.div`
   border: 2px solid ${({ theme }) => theme.primarygreen};
-  padding: 3rem 3rem;
+  /* padding: 3rem 0rem; */
   margin: 30px 0;
   position: relative;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-  max-height: 1000px;
+
+  /* overflow: hidden; */
 `;
 
 const IconWrapper = styled.div`
@@ -25,6 +26,12 @@ const IconWrapper = styled.div`
     width: 40px;
   }
 `;
+const StyledContentWrapper = styled.div`
+  margin: 4rem 2rem 3rem 3rem;
+  max-height: 500px;
+  overflow: auto;
+`;
+
 const CloseButton = styled.div`
   /* background-color: red; */
   top: 10px;
@@ -47,7 +54,7 @@ const InfoText = ({ children, imgPath, imgAlt, isOpen, onClick }) => (
     <CloseButton onClick={onClick}>
       <img src={close} alt="" />
     </CloseButton>
-    {children}
+    <StyledContentWrapper>{children}</StyledContentWrapper>
   </StyledWrapper>
 );
 

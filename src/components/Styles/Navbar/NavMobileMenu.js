@@ -47,7 +47,7 @@ const NavMobileMenu = ({ isOpen }) => (
         <Link to="/Gas">Gaz</Link>
       </li>
       <li>
-        <Link to="/Water">Wodkan</Link>
+        <Link to="/Water">Woda</Link>
       </li>
       <li>
         <Link to="/Contact">Kontakt</Link>

@@ -105,7 +105,7 @@ class WaterCalc extends Component {
       if (this.hasInputAppliance() && speedFactor > 0) {
         let sumOfQn = Calc.sumOfQn(basin, sink, rinser, tub, shower, wash, dish, urinal);
         sumOfQn = Calc.roundToDigits(sumOfQn, 2);
-        let calculatedQ = Calc.calcQbasenOnQn(sumOfQn, buildingType);
+        let calculatedQ = Calc.calcQbasedOnQn(sumOfQn, buildingType);
         let calculatedQinCMPH = Calc.lpsToCmph(calculatedQ);
         let result = Calc.getProperPipeDepOnMaxSpeed(
           speedFactor,
