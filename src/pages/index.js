@@ -29,10 +29,7 @@ const Hero = styled.div`
   background-size: cover;
   background-position: 50% 70%;
   height: 300px;
-<<<<<<< HEAD
   width: 100%;
-=======
->>>>>>> cb4392033da33e9cfe2e53260dd554cc2c8b6963
   ${({ theme }) => theme.mediaQ.tablet} {
     height: 380px;
     padding: 6rem 0;
@@ -75,26 +72,26 @@ class IndexPage extends React.Component {
         </Hero>
         <ContentWrapper>
           <StyledWrapper>
-            <Card tittle="Ogrzewanie" imgPath={heatingImg} to="/Ogrzewanie">
+            <Card tittle="Ogrzewanie" imgPath={heatingImg} to="/Heating">
               <p>
                 Dobór średnicy rur na podstawie podanego przepływu. Obliczenie przepływu
                 oraz średnic na podstawie podanej mocy i różnicy temperatur.
               </p>
             </Card>
 
-            <Card tittle="Wentylacja" imgPath={vent} to="/Wentylacja">
+            <Card tittle="Wentylacja" imgPath={vent} to="/Vent">
               <p>
                 Automatyczny dobór kanałów wentylacyjnych Spiro w oparciu o podany
                 przepływ. Obliczenie prędkości w kanale prostokątnym.
               </p>
             </Card>
-            <Card tittle="Instalacja wodna" imgPath={water} to="/Wodociag">
+            <Card tittle="Instalacja wodna" imgPath={water} to="/Water">
               <p>
                 Automatyczny dobór średnic rur wodnych w oparciu o sumę wypływów
                 normatywnych i przepływ obliczeniowy. Automatyczne obliczenie przepływu.
               </p>
             </Card>
-            <Card tittle="Gaz" imgPath={gas} to="/Gaz">
+            <Card tittle="Gaz" imgPath={gas} to="/Gas">
               <p>
                 Przeliczanie mocy urządzeń gazowych na wartość przepływu. Obliczenie
                 spadku ciśnienia w przewodach oraz dobór średnicy.
