@@ -6,7 +6,7 @@
   "author": "KBM Projekt <bartoszkilinski@kbmprojekt.pl> (https://kbmprojekt.pl)",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.3.25",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.0.39",
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-offline": "^2.0.25",
